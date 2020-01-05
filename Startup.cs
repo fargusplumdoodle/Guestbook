@@ -9,6 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using GuestBook.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace GuestBook
 {
     public class Startup
@@ -24,6 +27,9 @@ namespace GuestBook
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<GuestbookContext>(options => 
+                options.UseSqlite(Configuration.GetConnectionString("GuestbookContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
