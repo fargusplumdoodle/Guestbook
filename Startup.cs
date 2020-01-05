@@ -56,7 +56,7 @@ namespace GuestBook
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Guest}/{action=Index}/{id?}");
             });
         }
     }

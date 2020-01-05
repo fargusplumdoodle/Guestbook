@@ -3,14 +3,16 @@ using System;
 using GuestBook.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GuestBook.Migrations
 {
     [DbContext(typeof(GuestbookContext))]
-    partial class GuestbookContextModelSnapshot : ModelSnapshot
+    [Migration("20200105174339_AddedID")]
+    partial class AddedID
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
