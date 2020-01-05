@@ -5,14 +5,14 @@
 }
 
 <h2>Guestbook</h2>
-
-<p>Welcome to the guestbook! Please sign your name!</p>
+<hr />
 
 @if (Model != null) {
-    <h1>Welcome @Html.DisplayFor(model => model.Name)</h1>
+    <h4>Welcome @Html.DisplayFor(model => model.Name)</h4>
+
+    <a asp-area="" asp-controller="Guest" asp-action="Read">See your name on the "Read" page</a>
 } else {
-<h4>Guest</h4>
-<hr />
+<p>Welcome to the GuestBook! Please sign your name!</p>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="index">
@@ -32,10 +32,6 @@
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
